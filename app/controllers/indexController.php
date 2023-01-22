@@ -9,6 +9,13 @@ class indexController extends AbstractController
 
     public function index()
     {
-        echo 'IndexController@index';
+        $this->view->render('index_index');
+    }
+
+    public static function url(string $controller = null, string $action = null)
+    {
+        $controller = $controller ?? 'index';
+        $action = $action ?? 'index';
+        return "/{$controller}/{$action}";
     }
 }
